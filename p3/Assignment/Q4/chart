@@ -1,0 +1,11 @@
+-- 1. The number of infected people per virus
+
+SELECT vname, COUNT(*)
+FROM infect
+GROUP BY vname;
+
+-- 2. The average price for vaccination for different countries
+
+SELECT rname, AVG(price)
+FROM vaccination
+GROUP BY rname;
