@@ -1,0 +1,219 @@
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+1
+------------------ Start Request ------------------
+1. Query : P (Virus | Symptom)
+Show Nothing if the Symptom Does Not Belong to the Virus
+Input Number to Select Virus
+Nr. : Virus Name
+ 0. : MERS-CoV
+ 1. : SARS-CoV
+ 2. : COVID-19
+ 3. : Ebola virus
+ 4. : Zika virus
+ 5. : Human immunodeficiency viruses
+Please enter a number between 0 and 5 (include both)
+2
+Input Number to Select Symptom
+Nr. : Symptom Name
+ 0. : Fever
+ 1. : Cough
+ 2. : Headache
+ 3. : Joint and muscle aches
+ 4. : Weakness
+ 5. : Lack of appetite
+ 6. : Abdominal pain
+Please enter a number between 0 and 6 (include both)
+0
+SELECT sub1.vName AS "Virus", sub1.sName AS "Symptom", (sub1.Count * 1. / sub2.Count * 1.) AS "P (Virus | Symptom)" FROM (  SELECT I.vName, E.sName, Count(*) AS Count  FROM Infect I JOIN Exhibit E ON I.Nationality = E.Nationality AND I.National_ID = E.National_ID  GROUP BY I.vName, E.sName  )  sub1 JOIN (  SELECT E.sName, Count(*) AS Count  FROM Infect I JOIN Exhibit E ON I.Nationality = E.Nationality AND I.National_ID = E.National_ID  GROUP BY E.sName ) sub2 ON sub1.sName = sub2.sName WHERE sub1.vName = 'COVID-19' AND sub1.sName = 'Fever'
+P (COVID-19 | Fever)
+0.25
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+2
+------------------ Start Request ------------------
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+Input Number to Select Virus
+Nr. : Virus Name
+ 0. : MERS-CoV
+ 1. : SARS-CoV
+ 2. : COVID-19
+ 3. : Ebola virus
+ 4. : Zika virus
+ 5. : Human immunodeficiency viruses
+Please enter a number between 0 and 5 (include both)
+2
+SELECT V.iName AS "Research Institute", V.rName AS "Country", R.address AS "Address" FROM Vaccination AS V JOIN Research_Institute AS R ON V.rName = R.rName AND V.iName = R.iName WHERE V.vName = 'COVID-19'
+Research Institute : The University of Tokyo
+Country : Japan
+Address : Bunkyo City
+----------------------------------------------
+Research Institute : Columbia University Irving Medical Center
+Country : United States
+Address : 622 W 168th St, New York, NY 10032, Vereinigte Staaten
+----------------------------------------------
+Research Institute : The University of Texas Southwestern Medical Center
+Country : United States
+Address : 5323 Harry Hines Blvd., Dallas, Texas 75390
+----------------------------------------------
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+2
+------------------ Start Request ------------------
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+Input Number to Select Virus
+Nr. : Virus Name
+ 0. : MERS-CoV
+ 1. : SARS-CoV
+ 2. : COVID-19
+ 3. : Ebola virus
+ 4. : Zika virus
+ 5. : Human immunodeficiency viruses
+Please enter a number between 0 and 5 (include both)
+1
+SELECT V.iName AS "Research Institute", V.rName AS "Country", R.address AS "Address" FROM Vaccination AS V JOIN Research_Institute AS R ON V.rName = R.rName AND V.iName = R.iName WHERE V.vName = 'SARS-CoV'
+Research Institute : Chinese Academy of Medical Sciences
+Country : China
+Address : Dongdan 3rd Alley, Dong Dan, Dongcheng, Beijing
+----------------------------------------------
+Research Institute : The University of Tokyo
+Country : Japan
+Address : Bunkyo City
+----------------------------------------------
+Research Institute : University of Oxford
+Country : UK
+Address : Oxford
+----------------------------------------------
+Research Institute : University of Delhi
+Country : India
+Address : Delhi
+----------------------------------------------
+Research Institute : Paris Sciences et Lettres - PSL Research University Paris
+Country : France
+Address : Paris
+----------------------------------------------
+Research Institute : McGill University
+Country : Canada
+Address : Montreal
+----------------------------------------------
+Research Institute : Columbia University Irving Medical Center
+Country : United States
+Address : 622 W 168th St, New York, NY 10032, Vereinigte Staaten
+----------------------------------------------
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+3
+------------------ Start Request ------------------
+3. Insert: New Symptom
+Please Enter the Name of a new Symptom
+Please enter a String shorter than 250 (Only numbers, alphabets and whitespace are allowed)
+Vincent
+Please Enter the Description of a new Symptom
+Please enter a String shorter than 990 (Only numbers, alphabets and whitespace are allowed)
+Happy
+INSERT INTO Symptom(sname, description) VALUES ( 'Vincent' , 'Happy' ) 
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+4
+------------------ Start Request ------------------
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+Input Number to Select Region
+Nr. : Region Name
+0. : United States
+1. : China
+2. : Iran
+3. : Nigeria
+4. : Brazil
+5. : Germany
+6. : Taiwan
+7. : Japan
+8. : UK
+9. : Canada
+10. : India
+11. : France
+Please enter a number between 0 and 11 (include both)
+8
+Please Enter the Percentage to Change. e.g. -30 will decrease the Price of vaccinations by 30%
+Please enter a number between -200 and 200 (include both)
+5  
+UPDATE vaccination SET price = price * 0.05 where rname = 'UK'
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+5
+------------------ Start Request ------------------
+5. Modify: Re-open the boarder of a country again
+Input Number to Select Region
+Nr. : Region Name
+0. : United States
+1. : China
+2. : Iran
+3. : Nigeria
+4. : Brazil
+5. : Germany
+6. : Taiwan
+7. : Japan
+8. : UK
+9. : Canada
+10. : India
+11. : France
+Please enter a number between 0 and 11 (include both)
+7
+UPDATE closed_border SET End_Time = '2020-04-11' where r1rname = 'Japan'
+DONE
+------------------ End Request ------------------
+Please enter number to select the option...
+0. Quit
+1. Query : P (Virus | Symptom)
+2. Query : All Research Institutes Inventing Vaccination of a Virus
+3. Insert: New Symptom
+4. Modify: The Price of Vaccinations in an Region by Increasing/Decreasing Tax on Them
+5. Modify: Re-open the boarder of a country again
+Please enter a number between 0 and 5 (include both)
+0
+------------------ Bye! ------------------
