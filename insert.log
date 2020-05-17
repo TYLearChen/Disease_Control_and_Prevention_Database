@@ -1,6 +1,0 @@
-INSERT 0 3
-INSERT 0 4
-INSERT 0 3
-ERROR:  insert or update on table "accommodation" violates foreign key constraint "accommodation_iname_fkey"
-DETAIL:  Key (iname, rname)=(Florida Hospital Orlando, Germany) is not present in table "hospital".
-INSERT 0 5
