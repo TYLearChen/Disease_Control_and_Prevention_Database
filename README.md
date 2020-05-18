@@ -13,4 +13,7 @@ We use an ER modle in to build the model.
 In the second step (in folder p2), we implemented the detabase with PostgreSQL.
 In this step, we also create some useful queries as examples that the database can be used for.
 
-In the third step (in folder p2), we wrote a simple UI with Java and JDBC and some stored procedures for our databas.
+In the third step (in folder p3), we wrote a simple UI with Java and JDBC and some stored procedures for our databas.
+
+
+The details of can be found in the PDF in the corsponding folder of each step.
